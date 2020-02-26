@@ -1,0 +1,17 @@
+<!-- Page -->
+<div class='page'>
+    <!-- <div class='toggle'>
+        <mat-button-toggle-group>
+            <mat-button-toggle (click)='role = ROLES.HR_RECRUITER_KEYS'>
+                {{ROLES.HR_RECRUITER}}
+            </mat-button-toggle>
+            <mat-button-toggle (click)='role = ROLES.HR_MANAGER_KEYS'>
+                {{ROLES.HR_MANAGER}}
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div> -->
+
+    <app-onboarding-table *ngIf='this.userService.userRoleKey === ROLES.HR_RECRUITER_KEY'></app-onboarding-table>
+    <app-induction *ngIf='this.userService.userRoleKey === ROLES.HR_MANAGER_KEY'></app-induction>
+    <app-probation *ngIf='this.userService.userRoleKey === ROLES.MANAGER_KEY'></app-probation>
+</div>

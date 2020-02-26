@@ -1,0 +1,179 @@
+{
+    "settings-menu": {
+        "settings": "Cài đặt",
+        "language": "Ngôn ngữ",
+        "language-en": "Tiếng Anh",
+        "language-vi": "Tiếng Việt",
+        "logout": "Đăng xuất"
+    },
+    "dialog": {
+        "reminder": "* Vui lòng nhập các mục bắt buộc",
+        "confirm": {
+            "deletion": {
+                "title": "Xác nhận xóa",
+                "content": "Bạn có muốn xóa nội dung được chọn?"
+            },
+            "toggle_account": {
+                "title": "Xác nhận thao tác",
+                "content": "Bạn có muốn thay đổi trạng thái tài khoản?"
+            },
+            "approve_probation": {
+                "title": "Xác nhận thao tác",
+                "content": "Bạn có muốn xác nhận probation?"
+            }
+        },
+        "button": {
+            "save": "Lưu",
+            "delete": "Xóa",
+            "approve": "Xác nhận",
+            "send": "Gửi",
+            "close": "Đóng",
+            "yes": "Có",
+            "no": "Không"
+        }
+    },
+    "message": {
+        "error": {
+            "required": "Mục này bắt buộc nhập",
+            "email-validity": "Email không hợp lệ",
+            "date-validity": "Ngày không hợp lệ",
+            "file-limit": "Có nhiều hơn một tập tin",
+            "file-size": "Kích cỡ tập tin lớn hơn 20MB",
+            "file-extension": "Loại tập tin không hợp lệ",
+            "number-format": "Giá trị không hợp lệ"
+        }
+    },
+    "snackbar": {
+        "associate": {
+            "import": "Associate được lấy thành công",
+            "create": "Associate được tạo thành công",
+            "update": "Associate được chỉnh sửa thành công",
+            "delete": "Associate được xóa thành công",
+            "multi-delete": "Associate đã chọn xóa thành công",
+            "account-enable": "Tài khoản của {{value}} được kích hoạt thành công",
+            "account-disable": "Tài khoản của {{value}} được khóa thành công"
+        },
+        "induction-task": {
+            "import": "Công việc được lấy thành công",
+            "create": "Công việc được tạo thành công",
+            "update": "Công việc được chỉnh sửa thành công",
+            "delete": "Công việc được xóa thành công",
+            "notification-send": "Thông báo đã được gửi"
+        },
+        "probation-task": {
+            "import": "Công việc được lấy thành công",
+            "create": "Công việc được tạo thành công",
+            "update": "Công việc được chỉnh sửa thành công",
+            "delete": "Công việc được xóa thành công",
+            "probation-approval": "Probation được xác nhận"
+        },
+        "api-fail": "API thất bại"
+    },
+    "tooltip": {
+        "account-enable": "Kích hoạt tài khoản",
+        "account-disable": "Khóa tài khoản",
+        "associate-edit": "Chỉnh sửa associate",
+        "associate-delete": "Xóa associate"
+    },
+    "breadcrumb": {
+        "home": "Trang chủ",
+        "onboarding": "Onboarding"
+    },
+    "custom-paginator": {
+        "data-length-label": "Tổng: {{value}} mục",
+        "page-size-label": "{{value}} mục/trang"
+    },
+    "onboarding": {
+        "onboarding-table": {
+            "add": "THÊM ASSOCIATE",
+            "delete": "XÓA",
+            "import": "NHẬP DATA",
+            "search": "Tìm",
+            "no": "Số",
+            "group": "Nhóm",
+            "prefix": "Prefix",
+            "name": "Tên",
+            "competence": "Năng lực",
+            "email": "Email",
+            "phone": "Điện thoại",
+            "remark": "Ghi chú",
+            "joining-date": "Ngày gia nhập",
+            "action": "Thao tác"
+        },
+        "file-importer": {
+            "title": "Nhập từ file",
+            "sample-download": "Tải file mẫu",
+            "file-button": "Chọn",
+            "file-uploaded-title": "File được đẩy lên",
+            "file-deletion": "Xóa file",
+            "sheet-selection-title": "Chọn sheet"
+        },
+        "associate-modifier": {
+            "title-add": "Thêm associate",
+            "title-edit": "Chỉnh sửa associate",
+            "name": "Tên",
+            "email": "Email",
+            "phone": "Điện thoại",
+            "remark": "Ghi chú",
+            "group": "Nhóm",
+            "prefix": "Prefix",
+            "joining-date": "Ngày tham gia",
+            "competence": "Năng lực"
+        },
+        "task-modifier": {
+            "title-add": "Thêm công việc",
+            "title-edit": "Chỉnh sửa công việc",
+            "task": "Công việc",
+            "duration": "Thời hạn",
+            "remark": "Ghi chú",
+            "attachment": "Đính kèm",
+            "description": "Mô tả",
+            "file-selection": "Chọn file",
+            "files": "tập tin",
+            "unit": {
+                "day": "ngày",
+                "week": "tuần"
+            }
+        },
+        "induction": {
+            "title": "Việc cần làm",
+            "search": "Tìm",
+            "no": "Số",
+            "group": "Nhóm",
+            "prefix": "Prefix",
+            "name": "Tên",
+            "competence": "Năng lực",
+            "email": "Email",
+            "phone": "Điện thoại",
+            "remark": "Ghi chú",
+            "joining-date": "Ngày tham gia",
+            "action": "Thao tác",
+            "induction-pending-viewer": {
+                "title": "Việc chưa xong của {{value}}",
+                "push-notification": "Gửi thông báo"
+            },
+            "notification-sender": {
+                "title": "Ứng viên: {{value}}",
+                "task": "Công việc: {{value}}",
+                "message": "Tin nhắn"
+            }
+        },
+        "probation": {
+            "title": "Việc cần làm",
+            "search": "Tìm",
+            "no": "Số",
+            "group": "Nhóm",
+            "prefix": "Prefix",
+            "name": "Tên",
+            "competence": "Năng lực",
+            "email": "Email",
+            "phone": "Điện thoại",
+            "remark": "Ghi chú",
+            "joining-date": "Ngày tham gia",
+            "action": "Thao tác",
+            "probation-pending-viewer": {
+                "title": "Trạng thái của {{value}}"
+            }
+        }
+    }
+}

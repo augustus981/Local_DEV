@@ -1,0 +1,24 @@
+<div class='container'>
+    <div class='title'>
+        {{'onboarding.induction.title' | translate}}
+    </div>
+
+    <div class='card-container'>
+        <app-probation-card *ngFor='let probationTask of probationTasks' type={{INDUCTION.TO_DO}}
+            task={{probationTask.task}} description={{probationTask.description}} duration={{probationTask.duration}}
+            (click)='editCard(probationTask)'>
+        </app-probation-card>
+        <app-probation-card type={{INDUCTION.TO_DO_ADD}} (click)='addCard()'></app-probation-card>
+    </div>
+
+    <!-- Paginator -->
+    <div class='paginator'>
+        <mat-paginator class='default-paginator' (page)='getData()' [pageSizeOptions]='[10, 15, 20, 25, 50, 75, 100]'
+            showFirstLastButtons>
+        </mat-paginator>
+
+        <app-custom-paginator *ngIf='dataSource && dataSource.data.length > 10' [dataSource]='dataSource'
+            [paginator]='paginator'>
+        </app-custom-paginator>
+    </div>
+</div>

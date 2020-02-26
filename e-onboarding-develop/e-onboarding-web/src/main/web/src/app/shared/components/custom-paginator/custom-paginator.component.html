@@ -1,0 +1,60 @@
+<div class='container'>
+    <div class='data-length-container'>
+        <button mat-stroked-button color='primary'>
+            <span [translate]='"custom-paginator.data-length-label"' [translateParams]='{
+                value: paginator.length
+              }'></span>
+        </button>
+    </div>
+
+    <span class='horizontal-spacer'></span>
+
+    <div class='button-container'>
+        <button mat-icon-button (click)='goToFirstPage()'>
+            <mat-icon>
+                first_page
+            </mat-icon>
+        </button>
+        <button mat-icon-button (click)='goToPreviousPage()'>
+            <mat-icon>
+                chevron_left
+            </mat-icon>
+        </button>
+
+        <span class='page-button-container' #pageButtonContainer>
+            <button [ngClass]='{
+            "active-button": (page - 1) === paginator.pageIndex    
+        }' mat-icon-button *ngFor='let page of pages' (click)='goToPage(page)'>
+                {{page}}
+            </button>
+        </span>
+
+        <button mat-icon-button (click)='goToNextPage()'>
+            <mat-icon>
+                chevron_right
+            </mat-icon>
+        </button>
+        <button mat-icon-button (click)='goToLastPage()'>
+            <mat-icon>
+                last_page
+            </mat-icon>
+        </button>
+    </div>
+
+    <span class='horizontal-spacer'></span>
+
+    <div class='page-size-select-container'>
+        <button mat-stroked-button [matMenuTriggerFor]='menu' color='primary'>
+            <span [translate]="'custom-paginator.page-size-label'" [translateParams]='{
+                value: paginator.pageSize
+              }'></span>
+        </button>
+
+        <mat-menu #menu='matMenu' class='page-size-select'>
+            <button mat-menu-item *ngFor='let pageSize of paginator.pageSizeOptions' [value]='pageSize'
+                (click)='changePageSize(pageSize)'>
+                {{pageSize}}
+            </button>
+        </mat-menu>
+    </div>
+</div>

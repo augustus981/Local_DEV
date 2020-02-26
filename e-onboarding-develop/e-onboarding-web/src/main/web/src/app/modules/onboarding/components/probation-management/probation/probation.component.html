@@ -1,0 +1,14 @@
+<div class='container'>
+    <mat-button-toggle-group class='content-toggle' [value]='content'>
+        <mat-button-toggle (click)='toggleContent(PROBATION.TO_DO)' value={{PROBATION.TO_DO}}>
+            Checklist
+        </mat-button-toggle>
+        <mat-button-toggle (click)='toggleContent(PROBATION.PENDING)' value={{PROBATION.PENDING}}>
+            Associates
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<app-probation-card-list *ngIf='content === PROBATION.TO_DO'></app-probation-card-list>
+
+<app-probation-pending-table *ngIf='content === PROBATION.PENDING'></app-probation-pending-table>

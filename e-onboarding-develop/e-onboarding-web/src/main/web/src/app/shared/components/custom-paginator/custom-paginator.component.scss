@@ -1,0 +1,37 @@
+@import "../../../../assets/scss/config";
+
+.button-container {
+  .page-button-container {
+    button {
+      overflow-x: hidden;
+    }
+  }
+}
+
+.page-size-select-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .page-size-select {
+    width: 50px;
+    margin: 0 10px;
+  }
+
+  .page-size-label {
+    font-size: 0.8rem;
+    color: $bosch-blue;
+  }
+}
+
+.active-button {
+  background-color: $bosch-blue;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}

@@ -1,0 +1,53 @@
+<mat-card class='card mat-elevation-z4' #card>
+    <div *ngIf='type === INDUCTION.TO_DO'>
+        <mat-toolbar class='to-do-header'>
+            <span class='text'>
+                {{task}}
+            </span>
+        </mat-toolbar>
+
+        <!-- <mat-divider></mat-divider> -->
+
+        <div class='to-do-content'>
+            {{description}}
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <mat-toolbar class='to-do-actions'>
+            <mat-icon class='icon'>
+                attach_file
+            </mat-icon>
+            <span class='label'>
+                <!-- {{fileAmount}} {{'onboarding.task-modifier.files' | translate}} -->
+                0 {{'onboarding.task-modifier.files' | translate}}
+            </span>
+
+            <span class='horizontal-spacer'></span>
+
+            <mat-icon class='icon'>
+                access_time
+            </mat-icon>
+            <span class='label'>
+                {{duration}} {{durationUnit | translate}}
+            </span>
+        </mat-toolbar>
+    </div>
+
+    <div *ngIf='type === INDUCTION.TO_DO_ADD'>
+        <div class='to-do-add-icon'>
+            <mat-icon>
+                add
+            </mat-icon>
+        </div>
+
+        <mat-toolbar class='to-do-add-header'>
+        </mat-toolbar>
+
+        <div class='to-do-add-content'>
+        </div>
+
+        <mat-toolbar class='to-do-add-actions'>
+        </mat-toolbar>
+    </div>
+</mat-card>

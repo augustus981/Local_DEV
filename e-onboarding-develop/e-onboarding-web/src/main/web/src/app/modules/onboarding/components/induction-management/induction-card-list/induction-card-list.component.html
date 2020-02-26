@@ -1,0 +1,24 @@
+<div class='container'>
+    <div class='title'>
+        {{'onboarding.induction.title' | translate}}
+    </div>
+
+    <div class='card-container'>
+        <app-induction-card *ngFor='let inductionTask of inductionTasks' type={{INDUCTION.TO_DO}}
+            task={{inductionTask.task}} description={{inductionTask.description}} duration={{inductionTask.duration}}
+            (click)='editCard(inductionTask)'>
+        </app-induction-card>
+        <app-induction-card type={{INDUCTION.TO_DO_ADD}} (click)='addCard()'></app-induction-card>
+    </div>
+
+    <!-- Paginator -->
+    <div class='paginator'>
+        <mat-paginator class='default-paginator' (page)='getData()' [pageSizeOptions]='[10, 15, 20, 25, 50, 75, 100]'
+            showFirstLastButtons>
+        </mat-paginator>
+
+        <app-custom-paginator *ngIf='dataSource && dataSource.data.length > 10' [dataSource]='dataSource'
+            [paginator]='paginator'>
+        </app-custom-paginator>
+    </div>
+</div>

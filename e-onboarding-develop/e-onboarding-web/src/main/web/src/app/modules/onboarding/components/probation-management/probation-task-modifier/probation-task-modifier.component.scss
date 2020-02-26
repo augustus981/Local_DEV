@@ -1,0 +1,44 @@
+.group1,
+.group2 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 15px 10px 15px;
+  float: left;
+
+  .duration-input {
+    display: flex;
+
+    .duration-value-input {
+      float: left;
+      width: 125px;
+    }
+
+    .duration-unit-select {
+      margin: 0 4px;
+      width: 120px;
+    }
+  }
+
+  .file-list {
+    margin-bottom: 10px;
+  }
+
+  .description-input {
+    height: 152.9px;
+  }
+}
+
+.file-input {
+  display: none;
+}
+
+.file-input-button {
+  width: 100%;
+}
+
+.card {
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+}

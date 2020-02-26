@@ -1,0 +1,14 @@
+<div class='container'>
+    <mat-button-toggle-group class='content-toggle' [value]='content'>
+        <mat-button-toggle (click)='toggleContent(INDUCTION.TO_DO)' value={{INDUCTION.TO_DO}}>
+            Induction
+        </mat-button-toggle>
+        <mat-button-toggle (click)='toggleContent(INDUCTION.PENDING)' value={{INDUCTION.PENDING}}>
+            Associates
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<app-induction-card-list *ngIf='content === INDUCTION.TO_DO'></app-induction-card-list>
+
+<app-induction-pending-table *ngIf='content === INDUCTION.PENDING'></app-induction-pending-table>

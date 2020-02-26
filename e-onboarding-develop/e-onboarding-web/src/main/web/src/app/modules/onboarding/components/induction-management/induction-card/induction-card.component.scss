@@ -1,0 +1,100 @@
+@import "../../../../../../assets/scss/config";
+
+mat-card {
+  width: 280px;
+  background-color: transparent;
+}
+
+.to-do {
+  border-bottom: 1.5px solid $gray-background;
+  transition: transform 250ms, border 250ms;
+
+  .to-do-header {
+    background-color: #ffffff;
+
+    .text {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  .to-do-content {
+    padding: 5px 15px;
+    height: 100px;
+    background-color: #ffffff;
+    overflow: auto;
+  }
+
+  .to-do-actions {
+    padding: 20px 10px;
+    height: 25px;
+    background-color: #ffffff;
+    color: $bosch-blue;
+
+    .icon {
+      margin-right: 5px;
+      color: $bosch-blue;
+    }
+
+    .label {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.to-do:hover {
+  cursor: pointer;
+  position: absolute;
+  transform: scale(1.03);
+  border-bottom: 1.5px solid $bosch-blue;
+}
+
+.to-do-add {
+  height: 100%;
+  box-shadow: none;
+  border-bottom: 1.5px solid transparent;
+
+  .to-do-add-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid transparent;
+    transition: border 250ms;
+
+    mat-icon {
+      color: $bosch-blue;
+      transform: scale(1.7);
+      transition: transform 250ms;
+    }
+  }
+
+  .to-do-add-icon:hover {
+    cursor: pointer;
+    border: 1.5px solid $bosch-blue;
+
+    mat-icon {
+      transform: scale(2);
+    }
+  }
+
+  .to-do-add-header {
+    background-color: transparent;
+    color: $bosch-blue;
+    overflow: hidden;
+  }
+
+  .to-do-add-content {
+    padding: 10px;
+    height: 100px;
+    overflow: auto;
+  }
+
+  .to-do-add-actions {
+    padding: 20px 5px;
+    height: 25px;
+    background-color: transparent;
+  }
+}

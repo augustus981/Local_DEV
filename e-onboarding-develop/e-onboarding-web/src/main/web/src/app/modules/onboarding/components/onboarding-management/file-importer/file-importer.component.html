@@ -1,0 +1,76 @@
+<div class='dialog-custom-container'>
+    <mat-toolbar class='dialog-header'>
+        {{'onboarding.file-importer.title' | translate}}
+
+        <span class='horizontal-spacer'></span>
+
+        <button class='dialog-close-button' mat-icon-button (click)='close()'>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <div class='dialog-body' appDragDrop (fileDropped)='processFile($event)'>
+        <div class='dialog-reminder download-reminder' (click)='downloadSampleFile()'>
+            <mat-icon>help</mat-icon>
+            {{'onboarding.file-importer.sample-download' | translate}}
+        </div>
+
+        <input class='file-input' type='file' #fileInput (change)='processFile($event.target.files)'>
+        <div class='dialog-content-container' *ngIf='sheets.length === 0'>
+            <button class='file-input-button' mat-raised-button (click)='fileInput.click()' color='primary'>
+                {{'onboarding.file-importer.file-button' | translate}}
+            </button>
+        </div>
+
+        <div class='dialog-content-container' *ngIf='sheets.length > 0'>
+            <mat-card class='card'>
+                <mat-toolbar>
+                    <mat-icon class='prefix-icon ok-icon'>check_circle</mat-icon>
+                    {{'onboarding.file-importer.file-uploaded-title' | translate}}
+                </mat-toolbar>
+
+                <mat-card-content class='card-content'>
+                    <span class='file-name'>
+                        {{this.excelService.fileName}}
+                    </span>
+
+                    <span class='horizontal-spacer'></span>
+
+                    <button class='file-removal-button stroked-red-button' mat-stroked-button (click)='deleteFile()'
+                        color='warn'>
+                        {{'onboarding.file-importer.file-deletion' | translate}}
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class='dialog-content-container' *ngIf='sheets.length > 0'>
+            <mat-card class='card'>
+                <mat-toolbar>
+                    <mat-icon class='prefix-icon ok-icon'>error</mat-icon>
+                    {{'onboarding.file-importer.sheet-selection-title' | translate}}
+                </mat-toolbar>
+
+                <mat-card-content>
+                    <button mat-button class='sheet-button' *ngFor='let sheet of sheets' (click)='importSheet(sheet)'>
+                        {{sheet}}
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <!-- Vertical spacer -->
+    <div class='vertical-spacer'></div>
+
+    <!-- Actions -->
+    <div class='dialog-action-container'>
+        <button class='dialog-button stroked-blue-button' mat-stroked-button (click)='close()' color='primary'>
+            {{BUTTON_LABELS.CLOSE | translate}}
+        </button>
+    </div>
+</div>

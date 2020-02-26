@@ -1,0 +1,115 @@
+/* Angular material custom settings */
+
+@import "./config";
+
+button {
+  border-radius: 0 !important;
+  transition: filter 250ms !important;
+}
+
+mat-expansion-panel {
+  border-radius: 0 !important;
+}
+
+mat-form-field {
+  width: 250px;
+}
+
+.mat-select-panel {
+  border-radius: 0 !important;
+
+  * {
+    border-radius: 0 !important;
+  }
+}
+
+.mat-menu-panel {
+  border-radius: 0 !important;
+
+  .mat-menu-content {
+    padding: 0 !important;
+  }
+}
+
+.mat-tooltip {
+  border-radius: 0 !important;
+}
+
+.dialog-container {
+  .mat-dialog-container {
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.mat-button-toggle-group {
+  border-radius: 0 !important;
+
+  .mat-button-toggle-label-content {
+    line-height: 30px !important;
+  }
+
+  .mat-button-toggle-checked {
+    background-color: $bosch-blue !important;
+    color: #ffffff !important;
+  }
+}
+
+.success-snackbar {
+  padding: 5px 10px !important;
+  font-size: 0.9rem;
+  background-color: #ffffff !important;
+  border: 1px solid $bosch-blue;
+  border-radius: 0 !important;
+  color: $bosch-blue !important;
+
+  button {
+    background-color: #ffffff !important;
+    color: $bosch-blue !important;
+    border-radius: 0;
+  }
+}
+
+.error-snackbar {
+  padding: 5px 10px !important;
+  font-size: 0.9rem;
+  background-color: #ffffff !important;
+  border: 1px solid $bosch-red;
+  border-radius: 0 !important;
+  color: $bosch-red !important;
+
+  button {
+    background-color: #ffffff !important;
+    color: $bosch-red !important;
+    border-radius: 0;
+  }
+}
+
+.mat-datepicker-content {
+  border-radius: 0 !important;
+}
+
+.card {
+  border-radius: 0 !important;
+  padding: 0 !important;
+
+  mat-card-content {
+    padding: 10px !important;
+  }
+}
+
+.prefix-icon {
+  margin-right: 10px;
+}
+
+.ok-icon {
+  color: $bosch-blue;
+}
+
+.stroked-blue-button {
+  border-color: $bosch-blue !important;
+}
+
+.stroked-red-button {
+  border-color: $bosch-red !important;
+}

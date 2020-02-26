@@ -1,0 +1,37 @@
+<div class='dialog-custom-container'>
+    <mat-toolbar class='dialog-header'>
+        {{data.title | translate}}
+
+        <span class='horizontal-spacer'></span>
+
+        <button class='dialog-close-button' mat-icon-button (click)='close()'>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <!-- Body -->
+    <div class='dialog-body'>
+        <div class='dialog-content-container'>
+            <span class='message'>
+                {{data.message | translate}}
+            </span>
+        </div>
+    </div>
+
+    <!-- Vertical spacer -->
+    <div class='vertical-spacer'></div>
+
+    <!-- Footer -->
+    <div class='dialog-action-container'>
+        <button class='dialog-button stroked-blue-button' mat-stroked-button (click)='close()' color='primary'>
+            {{BUTTON_LABELS.NO | translate}}
+        </button>
+        <button class='dialog-button' mat-raised-button (click)='confirm()' color='primary'>
+            {{BUTTON_LABELS.YES | translate}}
+        </button>
+    </div>
+</div>

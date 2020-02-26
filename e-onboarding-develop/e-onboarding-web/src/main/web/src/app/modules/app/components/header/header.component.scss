@@ -1,0 +1,78 @@
+@import "environment-variable";
+@import "../../../../../assets/scss/config";
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 20px 10px 20px;
+  background-color: #ffffff;
+
+  .logo {
+    width: 130px;
+    float: left;
+    image-rendering: auto;
+    outline: none;
+    // content: url("/assets/images/logo.svg");
+    content: url("#{$base-assets-path}/images/logo.svg");
+  }
+
+  .logo:hover {
+    cursor: pointer;
+  }
+}
+
+.user {
+  .user-display {
+    color: $sub-color1;
+  }
+
+  .user-display:hover {
+    cursor: pointer;
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  height: fit-content;
+
+  .user-display-icon {
+    width: 40px;
+    // content: url("/assets/avatars/avatar3.jpg");
+    content: url("#{$base-assets-path}/avatars/avatar3.jpg");
+    border-radius: 50%;
+  }
+
+  .user-display-detail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    line-height: 20px;
+
+    .user-name {
+      font-size: 1.2rem;
+    }
+
+    .user-role {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      color: $sub-color1;
+
+      button {
+        font-size: 0.6rem;
+        width: 100%;
+        line-height: 15px;
+      }
+    }
+  }
+}
+
+.menu-button {
+  mat-icon {
+    transform: scale(0.8);
+  }
+}

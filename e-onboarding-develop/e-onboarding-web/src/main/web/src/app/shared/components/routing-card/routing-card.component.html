@@ -1,0 +1,25 @@
+<mat-card class='card' routerLink={{link}}>
+    <div class='img' [ngStyle]='style'></div>
+
+    <span class='vertical-spacer'></span>
+
+    <div class='content'>
+        <span class='title-container'>
+            <div class='title'>
+                {{title}}
+            </div>
+
+            <div class='subtitle'>
+                {{subtitle}}
+            </div>
+        </span>
+
+        <span class='horizontal-spacer'></span>
+
+        <span class='icon'>
+            <mat-icon>
+                {{icon}}
+            </mat-icon>
+        </span>
+    </div>
+</mat-card>

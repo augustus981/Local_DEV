@@ -1,0 +1,7 @@
+<!-- Card container -->
+<div class='card-container'>
+    <!-- Cards -->
+    <app-routing-card *ngFor='let route of routes' image={{route.image}} title={{route.title}}
+        subtitle={{route.subtitle}} link={{route.link}} icon={{route.icon}} color={{route.color}}>
+    </app-routing-card>
+</div>

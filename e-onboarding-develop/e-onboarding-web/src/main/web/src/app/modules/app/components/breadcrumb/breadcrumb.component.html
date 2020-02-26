@@ -1,0 +1,14 @@
+<div class='container'>
+    <nav *ngIf="isShowBreadcrumd">
+        <div *ngIf="this.router.url!=='/home'">
+            <a class="routing-item" [routerLink]="'/home'">
+                <mat-icon>home</mat-icon>
+            </a>
+        </div>
+        <div *ngFor="let item of breadcrumbs">
+            <a *ngIf="item.showBreadcrumbItem" class="routing-item"
+                [routerLink]="item.url">{{item.label | translate}}</a>
+            <mat-icon *ngIf="item.showBreadcrumbItem">arrow_right</mat-icon>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,142 @@
+<div class='dialog-custom-container'>
+    <mat-toolbar class='dialog-header'>
+        <span class *ngIf='inductionTask'>
+            {{'onboarding.task-modifier.title-edit' | translate}}
+        </span>
+        <span class *ngIf='!inductionTask'>
+            {{'onboarding.task-modifier.title-add' | translate}}
+        </span>
+
+        <span class='horizontal-spacer'></span>
+
+        <button class='dialog-close-button' mat-icon-button (click)='close()'>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <div class='dialog-body'>
+        <!-- Reminder -->
+        <div class='dialog-reminder'>
+            {{DIALOG.REMINDER | translate}}
+        </div>
+
+        <!-- Form container -->
+        <div class='dialog-content-container'>
+            <div class='group1'>
+                <!-- Task name -->
+                <mat-form-field>
+                    <mat-label>{{INDUCTION_TASK_FIELDS.TASK | translate}}</mat-label>
+                    <input matInput required [formControl]='formGroup.controls.taskControl' spellCheck='false'>
+                    <mat-error *ngIf='formGroup.controls.taskControl.invalid'>
+                        {{getErrorMessage(INDUCTION_TASK_FIELD_KEYS.TASK)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Duration -->
+                <div class='duration-input'>
+                    <!-- Value -->
+                    <mat-form-field class='duration-value-input'>
+                        <mat-label>{{INDUCTION_TASK_FIELDS.DURATION | translate}}</mat-label>
+                        <input matInput required [formControl]='formGroup.controls.durationControl' spellCheck='false'>
+                        <mat-error *ngIf='formGroup.controls.durationControl.invalid'>
+                            {{getErrorMessage(INDUCTION_TASK_FIELD_KEYS.DURATION)}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Unit -->
+                    <mat-form-field class='duration-unit-select'>
+                        <mat-select [(value)]='durationUnit'>
+                            <mat-option value={{UNITS.DURATION_DAYS}}>
+                                {{UNITS.DURATION_DAYS | translate}}
+                            </mat-option>
+                            <mat-option value={{UNITS.DURATION_WEEKS}}>
+                                {{UNITS.DURATION_WEEKS | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <!-- Remark -->
+                <mat-form-field>
+                    <mat-label>{{INDUCTION_TASK_FIELDS.REMARK | translate}}</mat-label>
+                    <input matInput required [formControl]='formGroup.controls.remarkControl' spellCheck='false'>
+                    <mat-error *ngIf='formGroup.controls.remarkControl.invalid'>
+                        {{getErrorMessage(INDUCTION_TASK_FIELD_KEYS.REMARK)}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class='group2'>
+                <!-- Description -->
+                <mat-form-field>
+                    <mat-label>{{INDUCTION_TASK_FIELDS.DESCRIPTION | translate}}</mat-label>
+                    <textarea class='description-input' matInput required
+                        [formControl]='formGroup.controls.descriptionControl' spellCheck='false'></textarea>
+                    <mat-error *ngIf='formGroup.controls.descriptionControl.invalid'>
+                        {{getErrorMessage(INDUCTION_TASK_FIELD_KEYS.DESCRIPTION)}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- <div class='dialog-content-container'>
+            <mat-card class='card' appDragDrop (fileDropped)='getDroppedFiles($event)'>
+                <mat-toolbar>
+                    {{INDUCTION_TASK_FIELDS.ATTACHMENT | translate}}
+                </mat-toolbar>
+
+                <mat-card-content>
+                    <input class='file-input' type='file' #fileInput multiple (change)='getInputFiles($event)'>
+                    <button class='file-input-button' mat-raised-button (click)='fileInput.click()'>
+                        {{'onboarding.task-modifier.file-selection' | translate}}
+                    </button>
+
+                    <mat-list class='file-list'>
+                        <mat-list-item *ngFor='let file of files'>
+                            {{file.name}}
+
+                            <span class='horizontal-spacer'></span>
+
+                            <span class='file-button-container'>
+                                <button mat-icon-button (click)='downloadFile(file)'>
+                                    <mat-icon>
+                                        save
+                                    </mat-icon>
+                                </button>
+                                <button mat-icon-button (click)='deleteFile(file)'>
+                                    <mat-icon>
+                                        delete_forever
+                                    </mat-icon>
+                                </button>
+                            </span>
+
+                            <mat-divider></mat-divider>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card-content>
+            </mat-card>
+        </div> -->
+    </div>
+
+    <!-- Vertical spacer -->
+    <div class='vertical-spacer'></div>
+
+    <!-- Actions -->
+    <div class='dialog-action-container'>
+        <button class='dialog-button stroked-blue-button' mat-stroked-button (click)='close()' color='primary'>
+            {{BUTTON_LABELS.CLOSE | translate}}
+        </button>
+        <button class='dialog-button stroked-red-button' mat-stroked-button (click)='delete()' color='warn'
+            *ngIf='inductionTask'>
+            {{BUTTON_LABELS.DELETE | translate}}
+        </button>
+        <button class='dialog-button' mat-raised-button [disabled]='inputsAreValid() ? false : true' (click)='save()'
+            color='primary'>
+            {{BUTTON_LABELS.SAVE | translate}}
+        </button>
+    </div>
+</div>

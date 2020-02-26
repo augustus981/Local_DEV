@@ -1,0 +1,73 @@
+<!-- Top supergraphics -->
+<div class='supergraphics-top'></div>
+
+<!-- Header toolbar -->
+<div class='toolbar mat-elevation-z3'>
+    <!-- Bosch logo -->
+    <span>
+        <img [routerLink]='"/"' class='logo'>
+    </span>
+
+    <!-- Spacer -->
+    <span class='horizontal-spacer'></span>
+
+    <!-- User section -->
+    <span class='user' *ngIf='userService.user'>
+        <span class='user-display' [matMenuTriggerFor]='userMenu'>
+            <mat-icon>account_circle</mat-icon>
+        </span>
+        <mat-menu #userMenu='matMenu'>
+            <mat-toolbar class='user-info'>
+                <img class='user-display-icon'>
+                <span class='user-display-detail'>
+                    <span class='user-name'>{{userService.user.userName}}</span>
+                    <span class='user-role'>
+                        {{getUserRole()}}
+                    </span>
+                </span>
+            </mat-toolbar>
+            <button class='menu-button' mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                {{'settings-menu.settings' | translate}}
+            </button>
+
+            <button class='menu-button' mat-menu-item [matMenuTriggerFor]="languageMenu">
+                <mat-icon>language</mat-icon>
+                {{'settings-menu.language' | translate}}
+            </button>
+
+            <button class='menu-button' mat-menu-item (click)='logOut()'>
+                <mat-icon>exit_to_app</mat-icon>
+                {{'settings-menu.logout' | translate}}
+            </button>
+        </mat-menu>
+
+        <mat-menu #languageMenu="matMenu">
+            <button mat-menu-item (click)="changeLanguage('en')">{{'settings-menu.language-en' | translate}}</button>
+            <button mat-menu-item (click)="changeLanguage('vi')">{{'settings-menu.language-vi' | translate}}</button>
+        </mat-menu>
+    </span>
+
+    <!-- Header buttons -->
+    <!-- <mat-toolbar-row>
+        <div class='button-container' #buttonContainer>
+            <span class='button' routerLink='/home' (click)='focus($event)'>Home</span>
+
+            <span class='button' routerLink='/onboarding' (click)='focus($event)'>Onboarding</span>
+
+            <span class='button' (click)='focus($event)'>Checklist</span>
+
+            <span class='button' (click)='focus($event)'>Schedule</span>
+
+            <span class='button' (click)='focus($event)'>Plan</span>
+
+            <span class='button' (click)='focus($event)'>Contact</span>
+        </div>
+    </mat-toolbar-row> -->
+</div>
+
+<!-- Dividing line -->
+<mat-divider></mat-divider>
+
+<!-- Breadcrumb -->
+<app-breadcrumb></app-breadcrumb>

@@ -1,0 +1,13 @@
+.accordion {
+  text-align: start;
+
+  mat-expansion-panel {
+    mat-expansion-panel-header {
+      mat-panel-title,
+      mat-panel-description {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

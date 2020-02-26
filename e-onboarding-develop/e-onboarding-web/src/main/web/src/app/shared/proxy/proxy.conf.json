@@ -1,0 +1,26 @@
+{
+    "/test": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "pathRewrite": {
+            "^/test": ""
+        },
+        "changeOrigin": true
+    },
+    "/auth": {
+        "target": "http://10.184.93.88:7000",
+        "secure": false,
+        "pathRewrite": {
+            "^/auth": ""
+        },
+        "changeOrigin": true
+    },
+    "/api": {
+        "target": "http://10.184.93.88:7001",
+        "secure": false,
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "changeOrigin": true
+    }
+}

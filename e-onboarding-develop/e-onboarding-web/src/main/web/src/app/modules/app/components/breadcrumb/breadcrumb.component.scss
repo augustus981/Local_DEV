@@ -1,0 +1,40 @@
+@import "../../../../../assets/scss/config";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+
+  nav {
+    margin: 10px;
+
+    * {
+      vertical-align: middle;
+      color: $sub-color2;
+    }
+
+    div {
+      width: fit-content;
+      display: inline-block;
+
+      a.routing-item {
+        margin: 0 5px;
+        font-size: 0.75rem;
+        text-decoration: none;
+      }
+
+      a.routing-item:hover {
+        color: $bosch-blue;
+
+        mat-icon {
+          color: $bosch-blue;
+        }
+      }
+
+      mat-icon {
+        transform: scale(0.75);
+      }
+    }
+  }
+}

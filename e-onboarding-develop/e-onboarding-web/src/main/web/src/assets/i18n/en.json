@@ -1,0 +1,179 @@
+{
+    "settings-menu": {
+        "settings": "Settings",
+        "language": "Language",
+        "language-en": "English",
+        "language-vi": "Vietnamese",
+        "logout": "Log out"
+    },
+    "dialog": {
+        "reminder": "* Please fill out the required fields",
+        "confirm": {
+            "deletion": {
+                "title": "Confirm deletion",
+                "content": "Do you want to delete the selected content?"
+            },
+            "toggle_account": {
+                "title": "Confirm action",
+                "content": "Do you want to change this account's status?"
+            },
+            "approve_probation": {
+                "title": "Confirm action",
+                "content": "Do you want to approve the probation?"
+            }
+        },
+        "button": {
+            "save": "Save",
+            "delete": "Delete",
+            "approve": "Approve",
+            "send": "Send",
+            "close": "Close",
+            "yes": "Yes",
+            "no": "No"
+        }
+    },
+    "message": {
+        "error": {
+            "required": "This field is required",
+            "email-validity": "Email is not valid",
+            "date-validity": "Date is not valid",
+            "file-limit": "More than one files are imported",
+            "file-size": "File size is larger than 20MB",
+            "file-extension": "File extension is not valid",
+            "number-format": "Value is not valid"
+        }
+    },
+    "snackbar": {
+        "associate": {
+            "import": "Associates have been successfully imported",
+            "create": "Associate created successfully",
+            "update": "Associate updated successfully",
+            "delete": "Associate deleted successfully",
+            "multi-delete": "Selected associate(s) deleted successfully",
+            "account-enable": "Account of {{value}} enabled successfully",
+            "account-disable": "Account of {{value}} disabled successfully"
+        },
+        "induction-task": {
+            "import": "Tasks have been successfully imported",
+            "create": "Task created successfully",
+            "update": "Task updated successfully",
+            "delete": "Task deleted successfully",
+            "notification-send": "Notification sent"
+        },
+        "probation-task": {
+            "import": "Tasks have been successfully imported",
+            "create": "Task created successfully",
+            "update": "Task updated successfully",
+            "delete": "Task deleted successfully",
+            "probation-approval": "Probation approved"
+        },
+        "api-fail": "API failed"
+    },
+    "tooltip": {
+        "account-enable": "Enable account",
+        "account-disable": "Disable account",
+        "associate-edit": "Edit associate",
+        "associate-delete": "Delete associate"
+    },
+    "breadcrumb": {
+        "home": "Home",
+        "onboarding": "Onboarding"
+    },
+    "custom-paginator": {
+        "data-length-label": "Total: {{value}} records",
+        "page-size-label": "{{value}} items/page"
+    },
+    "onboarding": {
+        "onboarding-table": {
+            "add": "ADD ASSOCIATE",
+            "delete": "DELETE",
+            "import": "IMPORT DATA",
+            "search": "Search",
+            "no": "No.",
+            "group": "Group",
+            "prefix": "Prefix",
+            "name": "Name",
+            "competence": "Competence",
+            "email": "Email",
+            "phone": "Phone",
+            "remark": "Remark",
+            "joining-date": "Joining date",
+            "action": "Action"
+        },
+        "file-importer": {
+            "title": "Import from file",
+            "sample-download": "Download sample file",
+            "file-button": "Select",
+            "file-uploaded-title": "File uploaded",
+            "file-deletion": "Delete file",
+            "sheet-selection-title": "Select sheet"
+        },
+        "associate-modifier": {
+            "title-add": "Add associate",
+            "title-edit": "Edit associate",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "remark": "Remark",
+            "group": "Group",
+            "prefix": "Prefix",
+            "joining-date": "Joining date",
+            "competence": "Competence"
+        },
+        "task-modifier": {
+            "title-add": "Add task",
+            "title-edit": "Edit task",
+            "task": "Task",
+            "duration": "Duration",
+            "remark": "Remark",
+            "attachment": "Attachment",
+            "description": "Description",
+            "file-selection": "Select file",
+            "files": "files",
+            "unit": {
+                "day": "days",
+                "week": "weeks"
+            }
+        },
+        "induction": {
+            "title": "To do",
+            "search": "Search",
+            "no": "No.",
+            "group": "Group",
+            "prefix": "Prefix",
+            "name": "Name",
+            "competence": "Competence",
+            "email": "Email",
+            "phone": "Phone",
+            "remark": "Remark",
+            "joining-date": "Joining date",
+            "action": "Action",
+            "induction-pending-viewer": {
+                "title": "Pending items of {{value}}",
+                "push-notification": "Push notification"
+            },
+            "notification-sender": {
+                "title": "Associate: {{value}}",
+                "task": "Task: {{value}}",
+                "message": "Message"
+            }
+        },
+        "probation": {
+            "title": "To do",
+            "search": "Search",
+            "no": "No.",
+            "group": "Group",
+            "prefix": "Prefix",
+            "name": "Name",
+            "competence": "Competence",
+            "email": "Email",
+            "phone": "Phone",
+            "remark": "Remark",
+            "joining-date": "Joining date",
+            "action": "Action",
+            "probation-pending-viewer": {
+                "title": "Status of {{value}}"
+            }
+        }
+    }
+}

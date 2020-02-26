@@ -1,0 +1,31 @@
+@import "../../../node_modules/@angular/material/theming";
+@import "./config";
+
+@include mat-core();
+
+$primary-color: (
+  500: $bosch-blue,
+  contrast: (
+    500: white
+  )
+);
+$accent-color: (
+  500: $bosch-yellow,
+  contrast: (
+    500: white
+  )
+);
+$warn-color: (
+  500: $bosch-red,
+  contrast: (
+    500: white
+  )
+);
+
+$bosch-primary: mat-palette($primary-color);
+$bosch-accent: mat-palette($accent-color);
+$bosch-warn: mat-palette($warn-color);
+
+$bosch-theme: mat-light-theme($bosch-primary, $bosch-accent, $bosch-warn);
+
+@include angular-material-theme($bosch-theme);

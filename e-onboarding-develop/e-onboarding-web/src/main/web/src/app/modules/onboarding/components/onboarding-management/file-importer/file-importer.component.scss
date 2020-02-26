@@ -1,0 +1,50 @@
+@import "../../../../../../assets/scss/config";
+
+.file-input {
+  display: none;
+}
+
+.download-reminder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  transition: color 250ms;
+
+  mat-icon {
+    transform: scale(0.75);
+  }
+}
+
+.download-reminder:hover {
+  cursor: pointer;
+  color: $bosch-blue;
+}
+
+.dialog-content-container {
+  display: flex;
+  justify-content: center;
+
+  .file-input-button {
+    min-width: 100px;
+  }
+}
+
+.sheet-button {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  text-align: center;
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .file-name {
+      padding: 0 20px;
+    }
+  }
+}

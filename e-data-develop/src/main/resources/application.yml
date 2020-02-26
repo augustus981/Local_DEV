@@ -1,0 +1,34 @@
+# Make the application available at http://localhost:7001
+server:
+  port: 7001
+
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:10.184.93.88}:8096/e_data
+    username: root
+    password: deeapp
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    hibernate:      
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        enable_lazy_load_no_trans: true
+
+# Configure the public key to use for verifying the incoming JWT tokens
+security:
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhiiifKv6Otf5PyqIE+LQ
+            EiJRRh6q8piPY9Okq+RfRu9Bue0D8hq7aFxcgkLZ6Bg9CAS+w1KdaE5MMeOCVVxv
+            rpRETzVpAsh6GL5nBc679jSqMzjr3V4uty46ilL4VHKSxlZh5Nmz5EMHPI5iwpNs
+            8U5n3QiwsTk514FXad54xPSPH3i/pDzGSZHrVcwDVaOKn7gFiIqP86vkJB47JZv8
+            T6P5RK7Rj06zoG45DMGWG3DQv6o1/Jm4IJQWj0AUD3bSHqzXkPr7qyMYvkE4kyMH
+            6aVAsAYMxilZFlJMv2b8N883gdi3LEeOJo8zZr5IWyyROfepdeOL7UkAXddAj+dL
+            WQIDAQAB
+            -----END PUBLIC KEY-----     

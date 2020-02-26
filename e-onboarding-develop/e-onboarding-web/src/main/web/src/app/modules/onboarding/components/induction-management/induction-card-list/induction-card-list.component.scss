@@ -1,0 +1,49 @@
+@import "../../../../../../assets/scss/config";
+
+.default-paginator {
+  display: none;
+}
+
+.container {
+  padding: 15px;
+
+  .title {
+    padding: 0 20px;
+    font-size: 1.2rem;
+    color: $bosch-blue;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(6, 280px);
+    gap: 30px 30px;
+    justify-content: center;
+    padding: 10px 30px;
+  }
+
+  .paginator {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+  }
+
+  @media screen and (max-width: 1680px) {
+    .card-container {
+      grid-template-columns: repeat(4, 280px);
+    }
+  }
+
+  @media screen and (max-width: 1290px) {
+    .card-container {
+      grid-template-columns: repeat(2, 280px);
+    }
+  }
+
+  @media screen and (max-width: 690px) {
+    .card-container {
+      grid-template-columns: repeat(1, 280px);
+    }
+  }
+}

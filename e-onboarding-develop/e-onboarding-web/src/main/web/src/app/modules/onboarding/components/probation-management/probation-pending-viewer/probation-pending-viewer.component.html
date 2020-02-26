@@ -1,0 +1,54 @@
+<div class='dialog-custom-container'>
+    <mat-toolbar class='dialog-header'>
+        <span [translate]='"onboarding.probation.probation-pending-viewer.title"' [translateParams]='{
+            value: data.name
+        }'></span>
+
+        <span class='horizontal-spacer'></span>
+
+        <button class='dialog-close-button' mat-icon-button (click)='close()'>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <div class='dialog-body'>
+        <div class='dialog-content-container' [@.disabled]='disableAnimation'>
+            <mat-accordion class='accordion'>
+                <mat-expansion-panel *ngFor='let pendingTask of pendingTasks'>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{pendingTask.assigment.task}}
+                        </mat-panel-title>
+
+                        <mat-panel-description>
+                            {{pendingTask.assigment.status}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+
+                    <div>
+                        <div>Description: {{pendingTask.assigment.description}}</div>
+                        <div>Remark: {{pendingTask.assigment.remark}}</div>
+                        <div>Duration: {{pendingTask.assigment.duration}}</div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
+    <!-- Vertical spacer -->
+    <div class='vertical-spacer'></div>
+
+    <!-- Actions -->
+    <div class='dialog-action-container'>
+        <button class='dialog-button stroked-blue-button' mat-stroked-button (click)='close()' color='primary'>
+            {{BUTTON_LABELS.CLOSE | translate}}
+        </button>
+        <button class='dialog-button' mat-raised-button (click)='approve()' color='primary'>
+            {{BUTTON_LABELS.APPROVE | translate}}
+        </button>
+    </div>
+</div>

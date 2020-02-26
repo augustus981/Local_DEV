@@ -1,0 +1,149 @@
+<div class='dialog-custom-container'>
+    <mat-toolbar class='dialog-header'>
+        <span class *ngIf='associate'>
+            {{'onboarding.associate-modifier.title-edit' | translate}}
+        </span>
+        <span class *ngIf='!associate'>
+            {{'onboarding.associate-modifier.title-add' | translate}}
+        </span>
+
+        <button class='dialog-close-button' mat-icon-button (click)='close()'>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <div class='dialog-body'>
+        <!-- Reminder -->
+        <div class='dialog-reminder'>
+            {{DIALOG.REMINDER | translate}}
+        </div>
+
+        <!-- Form container -->
+        <div class='dialog-content-container'>
+            <div class='group1'>
+                <!-- Name -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.NAME | translate}}</mat-label>
+                    <input matInput required [formControl]='formGroup.controls.nameControl' spellCheck='false'>
+                    <mat-error *ngIf='formGroup.controls.nameControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.NAME)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Gender -->
+                <mat-form-field>
+                    <mat-select placeholder='Gender' required [formControl]='formGroup.controls.genderControl'>
+                        <mat-option value='Male'>
+                            Male
+                        </mat-option>
+                        <mat-option value='Female'>
+                            Female
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf='formGroup.controls.genderControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.COMPETENCE)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- E-mail -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.EMAIL | translate}}</mat-label>
+                    <input matInput required [formControl]='formGroup.controls.emailControl' spellCheck='false'>
+                    <mat-error *ngIf='formGroup.controls.emailControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.EMAIL)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Phone -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.PHONE | translate}}</mat-label>
+                    <input matInput required [formControl]='formGroup.controls.phoneControl' spellCheck='false'>
+                    <mat-error *ngIf='formGroup.controls.phoneControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.PHONE)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Remark -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.REMARK | translate}}</mat-label>
+                    <input matInput [formControl]='formGroup.controls.remarkControl' spellCheck='false'>
+                </mat-form-field>
+            </div>
+
+            <div class='group2'>
+                <!-- Group -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.GROUP | translate}}</mat-label>
+                    <input matInput required [formControl]='formGroup.controls.groupControl' spellCheck='false'>
+                    <mat-error *ngIf='formGroup.controls.groupControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.GROUP)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Prefix -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.PREFIX | translate}}</mat-label>
+                    <input matInput [formControl]='formGroup.controls.prefixControl' spellCheck='false'>
+                </mat-form-field>
+
+                <!-- Joining date -->
+                <mat-form-field>
+                    <mat-label>{{ASSOCIATE_FIELDS.JOINING_DATE | translate}}</mat-label>
+                    <input matInput [matDatepicker]='joiningDatePicker' required
+                        [formControl]='formGroup.controls.joiningDateControl' spellCheck='false'>
+                    <mat-datepicker-toggle matSuffix [for]='joiningDatePicker'></mat-datepicker-toggle>
+                    <mat-datepicker #joiningDatePicker></mat-datepicker>
+                    <mat-error *ngIf='formGroup.controls.joiningDateControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.JOINING_DATE)}}
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Competence -->
+                <mat-form-field>
+                    <mat-select [placeholder]='ASSOCIATE_FIELDS.COMPETENCE | translate' required
+                        [formControl]='formGroup.controls.competenceControl'>
+                        <mat-option value={{ASSOCIATE_FIELDS.FRESHER}}>
+                            {{ASSOCIATE_FIELDS.FRESHER}}
+                        </mat-option>
+                        <mat-option value={{ASSOCIATE_FIELDS.JUNIOR}}>
+                            {{ASSOCIATE_FIELDS.JUNIOR}}
+                        </mat-option>
+                        <mat-option value={{ASSOCIATE_FIELDS.SENIOR}}>
+                            {{ASSOCIATE_FIELDS.SENIOR}}
+                        </mat-option>
+                        <mat-option value={{ASSOCIATE_FIELDS.INTERNSHIP}}>
+                            {{ASSOCIATE_FIELDS.INTERNSHIP}}
+                        </mat-option>
+                        <mat-option value={{ASSOCIATE_FIELDS.ARCHITECT}}>
+                            {{ASSOCIATE_FIELDS.ARCHITECT}}
+                        </mat-option>
+                        <mat-option value={{ASSOCIATE_FIELDS.MANAGER}}>
+                            {{ASSOCIATE_FIELDS.MANAGER}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf='formGroup.controls.competenceControl.invalid'>
+                        {{getErrorMessage(ASSOCIATE_FIELD_KEYS.COMPETENCE)}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical spacer -->
+    <div class='vertical-spacer'></div>
+
+    <!-- Actions -->
+    <div class='dialog-action-container'>
+        <button class='dialog-button stroked-blue-button' mat-stroked-button (click)='close()' color='primary'>
+            {{BUTTON_LABELS.CLOSE | translate}}
+        </button>
+        <button class='dialog-button' mat-raised-button [disabled]='inputsAreValid() ? false : true' (click)='save()'
+            color='primary'>
+            {{BUTTON_LABELS.SAVE | translate}}
+        </button>
+    </div>
+</div>

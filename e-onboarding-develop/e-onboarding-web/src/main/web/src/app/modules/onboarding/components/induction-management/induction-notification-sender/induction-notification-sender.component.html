@@ -1,0 +1,51 @@
+<div class='dialog-custom-container'>
+    <mat-toolbar class='dialog-header'>
+        <span [translate]='"onboarding.induction.notification-sender.title"' [translateParams]='{
+            value: data.task.newcomer.name
+        }'></span>
+
+        <span class='horizontal-spacer'></span>
+
+        <button class='dialog-close-button' mat-icon-button (click)='close()'>
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <mat-divider></mat-divider>
+
+    <div class='dialog-body'>
+        <div class='dialog-content-container'>
+            <div class='group1'>
+                <span [translate]='"onboarding.induction.notification-sender.task"'
+                    [translateParams]='{value: data.task.assigment.task}'>
+                </span>
+                <div>
+                    <mat-form-field>
+                        <mat-label>{{'onboarding.induction.notification-sender.message' | translate}}</mat-label>
+                        <textarea class='message-input' matInput required
+                            [formControl]='formGroup.controls.messageControl'></textarea>
+                        <mat-error *ngIf='formGroup.controls.messageControl.invalid'>
+                            {{getErrorMessage(INDUCTION_NOTIFICATION_FIELD_KEYS.MESSAGE)}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical spacer -->
+    <div class='vertical-spacer'></div>
+
+    <!-- Actions -->
+    <div class='dialog-action-container'>
+        <button class='dialog-button stroked-blue-button' mat-stroked-button (click)='close()' color='primary'>
+            {{BUTTON_LABELS.CLOSE | translate}}
+        </button>
+        <button class='dialog-button' mat-raised-button [disabled]='inputsAreValid() ? false : true' (click)='send()'
+            color='primary'>
+            {{BUTTON_LABELS.SEND | translate}}
+        </button>
+    </div>
+</div>

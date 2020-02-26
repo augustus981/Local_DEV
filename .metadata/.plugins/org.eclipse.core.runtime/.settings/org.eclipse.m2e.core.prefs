@@ -1,0 +1,9 @@
+eclipse.m2.WorkspacelifecycleMappingsLocation=U\:/Project/.metadata/.plugins/org.eclipse.m2e.core/lifecycle-mapping-metadata.xml
+eclipse.m2.defaultRuntime=apache-maven-3.6.3-bin
+eclipse.m2.downloadJavadoc=true
+eclipse.m2.runtimes=apache-maven-3.6.3-bin
+eclipse.m2.runtimesNodes/apache-maven-3.6.3-bin/location=U\:\\apache-maven-3.6.3-bin\\apache-maven-3.6.3
+eclipse.m2.runtimesNodes/apache-maven-3.6.3-bin/type=EXTERNAL
+eclipse.m2.updateProjects=true
+eclipse.m2.userSettingsFile=U\:\\apache-maven-3.6.3-bin\\apache-maven-3.6.3\\conf\\settings.xml
+eclipse.preferences.version=1
