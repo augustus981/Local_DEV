@@ -145,6 +145,17 @@ html, body {
 	background-size: cover;
 }
 
+#footer{
+	font-weight: bolder;
+	position: absolute;
+	width: 50%;
+	height : 100%;
+	margin-left: 0%;
+	margin-top: -20px;
+	text-shadow: 0 0 5px white;
+	color: rgb(0, 0, 0);
+}
+
 .login-form__container {
 	width: 25vw;
 	background: #fff;
